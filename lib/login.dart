@@ -142,28 +142,28 @@ class _LoginState extends State<Login> {
                 ],
               ),
               SizedBox(height: 39),
-              Container(
-                width: 375,
-                height: 50,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: Color(0xff025440),
-                ),
-                child: Center(
-                    child: GestureDetector(
-                      onTap: (){
-                        Navigator.push(context,MaterialPageRoute(builder:(context)=>Homepage()));
-                      },
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Homepage()));
+                },
+                child: Container(
+                  width: 375,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: Color(0xff025440),
+                  ),
+                  child: Center(
                       child: Text(
-                  'Sign in',
-                  style: TextStyle(
+                    'Sign in',
+                    style: TextStyle(
                       fontFamily: 'Raleway',
                       fontSize: 18,
                       fontWeight: FontWeight.w700,
                       color: Color(0xffF5F5F5),
-                  ),
+                    ),
+                  )),
                 ),
-                    )),
               ),
               SizedBox(height: 42),
               Row(
@@ -227,13 +227,18 @@ class _LoginState extends State<Login> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        'Sign Up',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xff025440),
-                          fontFamily: 'Lato',
+                      TextButton(
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Signup()));
+                        },
+                        child: Text(
+                          'Sign Up',
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600,
+                            color: Color(0xff025440),
+                            fontFamily: 'Lato',
+                          ),
                         ),
                       ),
                     ],

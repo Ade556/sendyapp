@@ -1,3 +1,4 @@
+import 'package:challenge1/login.dart';
 import 'package:flutter/material.dart';
 
 import 'signup.dart';
@@ -73,13 +74,18 @@ class Onboarding extends StatelessWidget {
                     fontFamily: 'Lato',
                   ),
                 ),
-                Text(
-                  'Sign in',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
-                    fontFamily: 'Lato',
-                    color: Color(0xff025440),
+                TextButton(
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
+                  },
+                  child: Text(
+                    'Sign in',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w700,
+                      fontFamily: 'Lato',
+                      color: Color(0xff025440),
+                    ),
                   ),
                 ),
               ],

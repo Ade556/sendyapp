@@ -249,19 +249,19 @@ class _SignupState extends State<Signup> {
                   ),
                 ],
               ),
-              Container(
-                width: 374,
-                height: 50,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Color(0xff025440),
-                ),
-                child: Center(
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Login()));
-                    },
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Login()));
+                },
+                child: Container(
+                  width: 374,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Color(0xff025440),
+                  ),
+                  child: Center(
                     child: Text(
                       'Sign Up',
                       style: TextStyle(
@@ -287,13 +287,18 @@ class _SignupState extends State<Signup> {
                       color: Color(0xff484848),
                     ),
                   ),
-                  Text(
-                    'Sign in',
-                    style: TextStyle(
-                      fontSize: 10,
-                      fontWeight: FontWeight.w400,
-                      fontFamily: 'Lato',
-                      color: Color(0xff025440),
+                  TextButton(
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
+                    },
+                    child: Text(
+                      'Sign in',
+                      style: TextStyle(
+                        fontSize: 10,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'Lato',
+                        color: Color(0xff025440),
+                      ),
                     ),
                   ),
                 ],
